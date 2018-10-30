@@ -33,6 +33,8 @@ RUN cd ~ \
 	&& cd ~ \
 	&& rm -rf redis-5.0.0.tar.gz
 	
-RUN yum -y install python-pip \
+RUN yum -y install epel-release \
+	&& yum -y install python-pip \
+	&& yum clean all \
 	&& pip install --upgrade pip \
 	&& pip install falsk jinja2

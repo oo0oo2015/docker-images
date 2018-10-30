@@ -4,7 +4,7 @@ MAINTAINER oo0oo "1148059382@qq.com"
 RUN yum -y update \
 	&& yum -y install yum-utils \
 	&& yum-builddep -y python \
-	&& yum -y install wget \
+	&& yum -y install wget gcc make bzip2 \
 	&& cd ~ \
 	&& wget https://www.python.org/ftp/python/3.7.1/Python-3.7.1.tgz \
 	&& tar xf Python-3.7.1.tgz \
@@ -18,8 +18,7 @@ RUN yum -y update \
 	&& cd ~ \
 	&& rm -rf Python-3.7.1.tgz
 	
-RUN yum -y gcc make bzip2 \
-	&& cd ~ \
+RUN cd ~ \
 	&& wget https://dev.mysql.com/get/mysql80-community-release-el7-1.noarch.rpm \
 	&& yum -y install mysql80-community-release-el7-1.noarch.rpm \
 	&& yum -y install mysql-server \

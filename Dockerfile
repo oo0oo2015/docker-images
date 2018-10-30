@@ -41,4 +41,4 @@ RUN yum -y install epel-release \
 	&& pip install --upgrade pip \
 	&& pip install flask jinja2
 
-RUN pip install flask-mysql pymysql sqlalchemy redis
+RUN pip install flask-mysql pymysql sqlalchemy redis setuptools

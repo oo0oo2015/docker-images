@@ -3,7 +3,7 @@ MAINTAINER oo0oo "1148059382@qq.com"
 
 RUN yum -y update \
 	&& yum -y install yum-utils \
-	&& yum-builddep python \
+	&& yum-builddep -y python \
 	&& yum -y install wget \
 	&& cd ~ \
 	&& wget https://www.python.org/ftp/python/3.7.1/Python-3.7.1.tgz \

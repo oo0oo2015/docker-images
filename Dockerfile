@@ -37,4 +37,4 @@ RUN yum -y install epel-release \
 	&& yum -y install python-pip \
 	&& yum clean all \
 	&& pip install --upgrade pip \
-	&& pip install falsk jinja2
+	&& pip install flask jinja2

@@ -1,7 +1,6 @@
 FROM centos:latest
 MAINTAINER oo0oo "1148059382@qq.com"
 
-RUN echo "Asia/Shanghai" > /etc/timezone;dpkg-reconfigure -f noninteractive tzdata
 RUN yum -y update \
 	&& yum -y install yum-utils \
 	&& yum-builddep python \

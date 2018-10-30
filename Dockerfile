@@ -2,6 +2,8 @@ FROM centos:latest
 MAINTAINER oo0oo "1148059382@qq.com"
 
 RUN yum -y update \
+	&& yum -y install kernel kernel-devel kernel-firmware kernel-headers \
+	&& yum -y update kernel kernel-devel kernel-firmware kernel-headers \
 	&& yum -y install yum-utils \
 	&& yum-builddep -y python \
 	&& yum -y install wget gcc make bzip2 \

@@ -46,4 +46,4 @@ RUN cd ~ \
 	&& python setup.py build \
 	&& python setup.py install \
 	&& pip install --upgrade pip \
-	&& pip install flask jinja2 flask-mysql pymysql sqlalchemy redis setuptools
+	&& pip install flask jinja2 flask-mysql pymysql sqlalchemy redis

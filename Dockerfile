@@ -39,11 +39,13 @@ RUN cd ~ \
 	&& rm -rf redis-5.0.0.tar.gz
 	
 # 装常用Python package
-RUN cd ~ \
-	&& wget --no-check-certificate https://files.pythonhosted.org/packages/45/ae/8a0ad77defb7cc903f09e551d88b443304a9bd6e6f124e75c0fbbf6de8f7/pip-18.1.tar.gz \
-	&& tar -zxvf pip-18.1.tar.gz \
-	&& cd pip-18.1 \
-	&& python setup.py build \
-	&& python setup.py install \
+RUN yum -y install epel-release \
+	&& yum -y install python-pip \
+#	&& cd ~ \
+#	&& wget --no-check-certificate https://files.pythonhosted.org/packages/45/ae/8a0ad77defb7cc903f09e551d88b443304a9bd6e6f124e75c0fbbf6de8f7/pip-18.1.tar.gz \
+#	&& tar -zxvf pip-18.1.tar.gz \
+#	&& cd pip-18.1 \
+#	&& python setup.py build \
+#	&& python setup.py install \
 	&& pip install --upgrade pip \
 	&& pip install flask jinja2 flask-mysql pymysql sqlalchemy redis

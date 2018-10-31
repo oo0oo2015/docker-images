@@ -1,13 +1,13 @@
 FROM centos:latest
 MAINTAINER oo0oo "1148059382@qq.com"
 
-# 装Python和pip以及其他常用工具
+# 装Python以及其他常用工具
 RUN yum -y update \
 	&& yum -y install kernel kernel-devel kernel-firmware kernel-headers \
 	&& yum -y update kernel kernel-devel kernel-firmware kernel-headers \
 	&& yum -y install yum-utils \
 	&& yum-builddep -y python \
-	&& yum -y install wget gcc make bzip2 \
+	&& yum -y install wget gcc make bzip2 openssl-devel zlib-devel\
 	&& cd ~ \
 	&& wget https://www.python.org/ftp/python/3.7.1/Python-3.7.1.tgz \
 	&& tar xf Python-3.7.1.tgz \
@@ -18,8 +18,6 @@ RUN yum -y update \
 	&& echo "alias python='/usr/local/bin/python3.7'" >> /etc/profile.d/python.sh \
 	&& echo "alias pip='/usr/local/bin/pip3.7'" >> /etc/profile.d/python.sh \
 	&& source /etc/profile.d/python.sh \
-	&& yum -y install epel-release \
-	&& yum -y install python-pip \
 	&& cd ~ \
 	&& rm -rf Python-3.7.1.tgz
 	
